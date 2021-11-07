@@ -1,0 +1,12 @@
+class Solution:
+    def sumOfUnique(self, nums: List[int]) -> int:
+        a = {}
+        for el in nums:
+            if el in a:
+                a[el]+=1
+            else:
+                a[el]=1
+        
+        Func = lambda a: [key for key,value in a.items() if(value<2)]
+        
+        return sum(Func(a))
